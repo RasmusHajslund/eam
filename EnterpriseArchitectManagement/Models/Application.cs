@@ -7,6 +7,8 @@ namespace EnterpriseArchitectManagement.Models
         public int ID { get; set; }
         public string Name { get; set; } = string.Empty;
         [DataType(DataType.Date)]
+        public DateTime AuditDate { get; set; } = DateTime.Now;
+        [DataType(DataType.Date)]
         public DateTime GoLiveDate { get; set; } = DateTime.Now;
         [DataType(DataType.Date)]
         public DateTime EndOfLifeDate { get; set; } = DateTime.Now.AddYears(1);
@@ -21,7 +23,7 @@ namespace EnterpriseArchitectManagement.Models
             Integration = 6,
             Maintenance = 7,
             Disposition = 8,
-            Disabled = 9,
+            Disposed = 9,
         }
         public List<Application> Components { get; set; } = new List<Application>();
     }
