@@ -41,7 +41,7 @@ namespace EnterpriseArchitectManagement.Pages.Applications
             if (await TryUpdateModelAsync<Application>(
                 emptyApplication,
                 "Application", // Prefix for form value.
-                s=> s.Name, s=>s.Description, s => s.AuditDate, s=>s.GoLiveDate))
+                s=> s.Name, s=>s.Description, s=>s.GoLiveDate))
             {
                 _context.Application.Add(Application);
                 await _context.SaveChangesAsync();
